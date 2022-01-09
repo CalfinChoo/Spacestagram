@@ -1,0 +1,30 @@
+.post {
+  width: 25%;
+  background-color: rgb(118, 87, 201);
+  border-radius: 5%;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.postInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  object-fit: contain;
+  width: 100%;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+}
+
+.title,
+.explanation {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.explanation {
+  width: 90%;
+  margin-bottom: 5%;
+}
