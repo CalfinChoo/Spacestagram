@@ -1,15 +1,17 @@
 .post {
-  width: 25%;
-  background-color: rgb(118, 87, 201);
-  border-radius: 25px;
-  border: 1px solid black;
+  width: 27%;
+  margin: 2%;
+  /* background-color: rgb(118, 87, 201); */
 }
 
 .postInfo {
   /* display: flex; */
-  height: 25vw;
+  height: calc(27vw * 0.53);
   width: 100%;
   overflow: hidden;
+  border: 1px solid black;
+  border-radius: 25px;
+  box-shadow: 0 1px 8px 4px rgb(64 60 67 / 61%);
 }
 
 .postImg {

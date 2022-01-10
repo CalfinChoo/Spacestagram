@@ -52,9 +52,11 @@ function App() {
         <Apod data={apod} />
       </div>
       <div className="posts">
-        {posts.items.map((post, i) => {
-          return <Post data={post} />;
-        })}
+        <div className="postsContainer">
+          {posts.items.map((post, i) => {
+            return <Post data={post} />;
+          })}
+        </div>
       </div>
     </div>
   );

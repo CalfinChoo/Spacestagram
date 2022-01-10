@@ -1,13 +1,19 @@
 .header {
-  background-color: rgb(105, 41, 189);
-  height: 7.5vh;
+  background-color: #280c47;
+  height: 6.5vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 1px 8px 4px rgb(64 60 67 / 61%);
+  border: 2px solid #0f0e29;
 }
 
 .logo {
   margin: 0;
   font-family: "Brush Script MT", cursive;
-  font-size: 5vh;
+  font-size: 3.5vh;
+  color: #f1f1f1;
 }

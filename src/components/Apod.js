@@ -10,15 +10,24 @@ function Apod(props) {
 
   useEffect(() => {
     updateData(props.data);
+    console.log(props.data);
   }, [props.data]);
 
   return (
     <div className="apod">
       {data.DataIsLoaded ? (
         <div className="apodInfo">
-          <img className="apodImg" src={data.items.url} />
           <div>
-            <h1 className="title">Astronomy Picture of the Day: </h1>
+            <h1 className="title">Astronomy Picture of the Day</h1>
+
+            <div className="media">
+              {data.items.media_type === "video" ? (
+                <iframe width="60%" height="300" src={data.items.url}></iframe>
+              ) : (
+                <img className="apodImg" src={data.items.url} />
+              )}
+            </div>
+
             <h2 className="title">{data.items.title}</h2>
             <div className="explanation">{data.items.explanation}</div>
           </div>

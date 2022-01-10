@@ -1,13 +1,22 @@
 .apod {
-  max-width: 65%;
+  max-width: 55%;
   background-color: rgb(118, 87, 201);
   border-radius: 25px;
   margin-left: 3%;
   margin-right: 3%;
+  box-shadow: 0 1px 8px 4px rgba(223, 192, 247, 0.61);
+  border: 2px solid #e5e5e5;
 }
 
 .apodInfo {
   display: flex;
+  flex-direction: column;
+}
+
+.media {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .apodImg {
@@ -16,6 +25,12 @@
   border-radius: 5%;
   /* border-top-left-radius: 5%;
   border-top-right-radius: 5%; */
+}
+
+.title {
+  background-color: #a06fed;
+  border-radius: 25px;
+  text-align: center;
 }
 
 .title,
@@ -27,4 +42,5 @@
 .explanation {
   width: 90%;
   margin-bottom: 5%;
+  font-size: 14px;
 }
