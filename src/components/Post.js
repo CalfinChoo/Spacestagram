@@ -9,16 +9,20 @@ function Post(props) {
   });
 
   useEffect(() => {
-    updateData(props.data);
+    updateData({
+      items: props.data,
+      DataIsLoaded: true,
+    });
   }, [props.data]);
 
   return (
     <div className="post">
       {data.DataIsLoaded ? (
         <div className="postInfo">
-          <img src={data.items.url} />
-          <h1 className="title">{data.items.title}</h1>
-          <div className="explanation">{data.items.explanation}</div>
+          <img className="postImg" src={data.items.links[0].href} />
+          {/* <div>
+            <h2 className="title">{data.items.data[0].title}</h2>
+          </div> */}
         </div>
       ) : (
         <span>Loading...</span>

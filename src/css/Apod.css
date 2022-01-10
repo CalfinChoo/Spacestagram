@@ -1,0 +1,30 @@
+.apod {
+  max-width: 65%;
+  background-color: rgb(118, 87, 201);
+  border-radius: 25px;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.apodInfo {
+  display: flex;
+}
+
+.apodImg {
+  object-fit: cover;
+  width: 50%;
+  border-radius: 5%;
+  /* border-top-left-radius: 5%;
+  border-top-right-radius: 5%; */
+}
+
+.title,
+.explanation {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.explanation {
+  width: 90%;
+  margin-bottom: 5%;
+}

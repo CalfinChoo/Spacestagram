@@ -1,30 +1,22 @@
 .post {
   width: 25%;
   background-color: rgb(118, 87, 201);
-  border-radius: 5%;
-  margin-left: 3%;
-  margin-right: 3%;
+  border-radius: 25px;
+  border: 1px solid black;
 }
 
 .postInfo {
-  display: flex;
-  flex-direction: column;
-}
-
-img {
-  object-fit: contain;
+  /* display: flex; */
+  height: 25vw;
   width: 100%;
-  border-top-left-radius: 5%;
-  border-top-right-radius: 5%;
+  overflow: hidden;
 }
 
-.title,
-.explanation {
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
-.explanation {
-  width: 90%;
-  margin-bottom: 5%;
+.postImg {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  /* border-top-left-radius: 5%;
+    border-top-right-radius: 5%; */
 }

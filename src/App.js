@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import Apod from "./components/Apod";
+import Header from "./components/Header";
 import Post from "./components/Post";
 import "./App.css";
 
@@ -8,6 +10,11 @@ function App() {
   // ]);
   const [apod, updateApod] = useState({
     items: [],
+    DataIsLoaded: false,
+  });
+  const [posts, updatePosts] = useState({
+    items: [],
+    metadata: {},
     DataIsLoaded: false,
   });
 
@@ -23,18 +30,31 @@ function App() {
           DataIsLoaded: true,
         })
       );
+    fetch("https://images-api.nasa.gov/search?q=cosmos&media_type=image")
+      .then((res) => res.json())
+      .then((json) => {
+        updatePosts({
+          items: json.collection.items,
+          metadata: json.collection.metadata,
+          DataIsLoaded: true,
+        });
+      });
   }, []);
 
-  // useEffect(() => {
-  //   console.log(apod);
-  // }, [apod]);
+  useEffect(() => {
+    console.log(posts);
+  }, [posts]);
 
   return (
     <div className="App">
-      <h1>Spacetagram</h1>
+      <Header />
+      <div className="apodZ">
+        <Apod data={apod} />
+      </div>
       <div className="posts">
-        <Post data={apod} />
-        <Post data={apod} />
+        {posts.items.map((post, i) => {
+          return <Post data={post} />;
+        })}
       </div>
     </div>
   );

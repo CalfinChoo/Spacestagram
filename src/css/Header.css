@@ -1,0 +1,13 @@
+.header {
+  background-color: rgb(105, 41, 189);
+  height: 7.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  margin: 0;
+  font-family: "Brush Script MT", cursive;
+  font-size: 5vh;
+}
