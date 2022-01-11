@@ -32,10 +32,11 @@ function Post(props) {
               </div>
             </div>
           </div>
-          <img className="postImg" src={data.items.links[0].href} />
-          {/* <div>
-            <h2 className="title">{data.items.data[0].title}</h2>
-          </div> */}
+          <img
+            className="postImg"
+            src={data.items.links[0].href}
+            key={data.items.links[0].href}
+          />
         </div>
       ) : (
         <span>Loading...</span>
