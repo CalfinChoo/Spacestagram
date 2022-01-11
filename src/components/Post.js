@@ -17,21 +17,30 @@ function Post(props) {
   }, [props.data]);
 
   return (
-    <motion.div className="post">
+    <div className="post" onClick={() => props.onClick(data.items)}>
       {data.DataIsLoaded ? (
-        <motion.div
-          className="postInfo"
-          whileHover={{ scale: 1.1, border: "1px solid green" }}
-        >
+        <div className="postInfo">
+          <div className="postDetails">
+            <div className="postTitle">{data.items.data[0].title}</div>
+            <div className="postMore">
+              <div className="postLikes">likes</div>
+              <div className="postDate">
+                {data.items.data[0].date_created.slice(
+                  0,
+                  data.items.data[0].date_created.indexOf("T")
+                )}
+              </div>
+            </div>
+          </div>
           <img className="postImg" src={data.items.links[0].href} />
           {/* <div>
             <h2 className="title">{data.items.data[0].title}</h2>
           </div> */}
-        </motion.div>
+        </div>
       ) : (
         <span>Loading...</span>
       )}
-    </motion.div>
+    </div>
   );
 }
 
