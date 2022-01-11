@@ -53,7 +53,7 @@ function App() {
           DataIsLoaded: true,
         })
       );
-    fetch("https://images-api.nasa.gov/search?q=cosmic&media_type=image")
+    fetch("https://images-api.nasa.gov/search?q=explosion&media_type=image")
       .then((res) => res.json())
       .then((json) => {
         updatePosts({

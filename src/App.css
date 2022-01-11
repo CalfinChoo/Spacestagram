@@ -5,6 +5,7 @@
   background-image: url("https://cutewallpaper.org/22/planets-wallpaper-1920x1080/1878219499.jpg");
   background-attachment: fixed;
   background-size: cover;
+  background-position: top left -2px;
 }
 
 .apodZ {
@@ -29,7 +30,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(to right, #8a58ff, #151b8c);
+  /* background-image: linear-gradient(to right, #8a58ff, #151b8c); */
   /* border-radius: 25px; */
   /* box-shadow: 2px 0px 8px 4px rgb(223 192 247 / 61%); */
   box-shadow: 2px 0px 8px 4px rgb(255 255 255 / 61%);

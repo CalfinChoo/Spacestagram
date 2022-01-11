@@ -16,10 +16,8 @@ function Apod(props) {
   return (
     <div className="apod">
       {data.DataIsLoaded ? (
-        <div className="apodInfo">
-          <div>
-            <h1 className="title">Astronomy Picture of the Day</h1>
-
+        <div className="apodContainer">
+          <div className="apodMediaContainer">
             <div className="media">
               {data.items.media_type === "video" ? (
                 <iframe width="60%" height="300" src={data.items.url}></iframe>
@@ -27,7 +25,9 @@ function Apod(props) {
                 <img className="apodImg" src={data.items.url} />
               )}
             </div>
-
+          </div>
+          <div className="apodInfo">
+            <h1 className="title">Astronomy Picture of the Day</h1>
             <h2 className="title">{data.items.title}</h2>
             <div className="explanation">{data.items.explanation}</div>
           </div>
