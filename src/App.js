@@ -57,7 +57,7 @@ function App() {
       .then((res) => res.json())
       .then((json) => {
         updatePosts({
-          items: json.collection.items,
+          items: json.collection.items.slice(0, 99),
           metadata: json.collection.metadata,
           DataIsLoaded: true,
         });

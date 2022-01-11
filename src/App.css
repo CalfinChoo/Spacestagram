@@ -1,9 +1,10 @@
 .App {
   width: 100%;
   height: 100%;
-  background-color: #000121;
-  /* background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2aa5a8b8-67eb-4aec-ba55-cfba0e4ef9cd/d2b7m7v-6f04f2da-dd8e-4783-b801-d7b0137dfdff.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzJhYTVhOGI4LTY3ZWItNGFlYy1iYTU1LWNmYmEwZTRlZjljZFwvZDJiN203di02ZjA0ZjJkYS1kZDhlLTQ3ODMtYjgwMS1kN2IwMTM3ZGZkZmYuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.NjV48Xdv6HPaecK013fZCDyev6IW9cRCl6YGhvkXDYk");
-  background-attachment: fixed; */
+  /* background-color: #000121; */
+  background-image: url("https://cutewallpaper.org/22/planets-wallpaper-1920x1080/1878219499.jpg");
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .apodZ {
@@ -22,16 +23,17 @@
 .postsContainer {
   width: 55%;
   min-height: 100vh;
-  padding-top: 5vh;
-  padding-bottom: 5vh;
+  /* padding-top: 5vh;
+  padding-bottom: 5vh; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: rgb(118, 87, 201);
-  border-radius: 25px;
-  box-shadow: 0 1px 8px 4px rgba(223, 192, 247, 0.61);
-  border: 2px solid #e5e5e5;
+  background-image: linear-gradient(to right, #8a58ff, #151b8c);
+  /* border-radius: 25px; */
+  /* box-shadow: 2px 0px 8px 4px rgb(223 192 247 / 61%); */
+  box-shadow: 2px 0px 8px 4px rgb(255 255 255 / 61%);
+  /* border-inline: 1px solid #e5e5e5; */
   /* row-gap: 5vh; */
   /* gap: 2vw; */
 }
