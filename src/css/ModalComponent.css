@@ -27,14 +27,16 @@
 }
 
 .modalImgContainer {
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modalImgContainer,
 .modalInfo {
   width: 50%;
   height: 100%;
+  overflow: auto;
 }
 
 .modalImg {
@@ -44,7 +46,42 @@
 }
 
 .modalCloseContainer {
+  margin: 5%;
   display: flex;
   justify-content: flex-end;
+  position: sticky;
+  top: 3%;
+}
+
+.close {
+  transform: scale(1.8);
   cursor: pointer;
+}
+
+.close:hover {
+  color: rgb(78, 60, 100);
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modalBody {
+  margin-bottom: 7.5%;
+}
+
+.modalHeader,
+.modalDescription,
+.modalDate {
+  margin-right: 7.5%;
+}
+
+.modalTitle {
+  font-size: 32px;
+}
+
+.modalDate {
+  font-style: italic;
 }

@@ -25,20 +25,22 @@ function ModalComponent({ modalIsOpen, closeModal, modalInfo }) {
               </div>
               <div className="modalInfo">
                 <div className="modalCloseContainer">
-                  <CloseIcon />
-                </div>
-                <div className="modalHeader">
-                  <h1 className="modalTitle">{modalInfo.data.data[0].title}</h1>
-                  <div className="modalLikes"></div>
-                </div>
-                <div className="modalDescription">
-                  {parse(modalInfo.data.data[0].description)}
+                  <CloseIcon className="close" onClick={closeModal} />
                 </div>
                 <div className="modalDate">
                   {modalInfo.data.data[0].date_created.slice(
                     0,
                     modalInfo.data.data[0].date_created.indexOf("T")
                   )}
+                </div>
+                <div className="modalHeader">
+                  <h1 className="modalTitle">{modalInfo.data.data[0].title}</h1>
+                  <div className="modalLikes">Likes</div>
+                </div>
+                <div className="modalBody">
+                  <div className="modalDescription">
+                    {parse(modalInfo.data.data[0].description)}
+                  </div>
                 </div>
               </div>
             </div>

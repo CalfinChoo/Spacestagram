@@ -8,7 +8,7 @@
   position: sticky;
   top: 0;
   box-shadow: 0 -50px 98px 44px rgb(-9 39 15 / 61%);
-  border: 2px solid #0f0e29;
+  border-bottom: 2px solid #0f0e29;
   z-index: 9999;
 }
 

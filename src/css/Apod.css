@@ -1,6 +1,7 @@
 .apod {
+  min-width: 700px;
   max-width: 55%;
-  height: calc(52.5vw / 3);
+  /* height: calc(52.5vw / 3); */
   background-image: linear-gradient(to right, #8a58ff, #151b8c);
   /* border-radius: 10px; */
   margin-left: 3%;
@@ -20,16 +21,18 @@
 }
 
 .media {
-  width: 100%;
-  height: 100%;
+  width: calc(52.5vw / 3);
+  height: calc(52.5vw / 3);
   display: flex;
   justify-content: center;
   overflow: hidden;
 }
 
 .apodMediaContainer {
-  width: calc(52.5vw / 3);
-  height: calc(52.5vw / 3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5%;
 }
 
 .apodImg {
@@ -46,10 +49,10 @@
 }
 
 h1 {
-  font-size: 2vw;
+  font-size: 32px;
 }
 h2 {
-  font-size: 1.25vw;
+  font-size: 20px;
   margin-top: 0.25vh;
 }
 
@@ -62,5 +65,5 @@ h2 {
 .explanation {
   width: 85%;
   margin-bottom: 5%;
-  font-size: 0.675vw;
+  font-size: 13px;
 }
