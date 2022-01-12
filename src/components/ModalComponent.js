@@ -20,29 +20,45 @@ function ModalComponent({ modalIsOpen, closeModal, modalInfo }) {
         {modalIsOpen && (
           <>
             <div className="modalContainer">
-              <div className="modalImgContainer">
-                <img className="modalImg" src={modalInfo.data.links[0].href} />
-              </div>
-              <div className="modalInfo">
-                <div className="modalCloseContainer">
-                  <CloseIcon className="close" onClick={closeModal} />
-                </div>
-                <div className="modalDate">
-                  {modalInfo.data.data[0].date_created.slice(
-                    0,
-                    modalInfo.data.data[0].date_created.indexOf("T")
-                  )}
-                </div>
-                <div className="modalHeader">
-                  <h1 className="modalTitle">{modalInfo.data.data[0].title}</h1>
-                  <div className="modalLikes">Likes</div>
-                </div>
-                <div className="modalBody">
-                  <div className="modalDescription">
-                    {parse(modalInfo.data.data[0].description)}
+              {modalInfo.isApod ? (
+                <div className="modalApodImgContainer">
+                  <img className="modalImg" src={modalInfo.data.url} />
+                  <div className="modalApodCloseContainer">
+                    <CloseIcon className="close" onClick={closeModal} />
                   </div>
                 </div>
-              </div>
+              ) : (
+                <div className="modalImgContainer">
+                  <img
+                    className="modalImg"
+                    src={modalInfo.data.links[0].href}
+                  />
+                </div>
+              )}
+              {!modalInfo.isApod && (
+                <div className="modalInfo">
+                  <div className="modalCloseContainer">
+                    <CloseIcon className="close" onClick={closeModal} />
+                  </div>
+                  <div className="modalDate">
+                    {modalInfo.data.data[0].date_created.slice(
+                      0,
+                      modalInfo.data.data[0].date_created.indexOf("T")
+                    )}
+                  </div>
+                  <div className="modalHeader">
+                    <h1 className="modalTitle">
+                      {modalInfo.data.data[0].title}
+                    </h1>
+                    <div className="modalLikes">Likes</div>
+                  </div>
+                  <div className="modalBody">
+                    <div className="modalDescription">
+                      {parse(modalInfo.data.data[0].description)}
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </>
         )}

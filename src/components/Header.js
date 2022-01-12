@@ -8,9 +8,13 @@ function Header() {
   const [search, updateSearch] = useState("");
   let navigate = useNavigate();
 
+  const handleNavigate = () => {
+    if (/\S/.test(search)) navigate(`/search/${search}`);
+  };
+
   const handleSubmit = (e) => {
     if (e.code === "Enter") {
-      navigate(`/search/${search}`);
+      handleNavigate();
     }
   };
 
@@ -31,7 +35,7 @@ function Header() {
             onKeyDown={handleSubmit}
             // onSubmit={(event) => navigate(`/search/${event.target}`)}
           />
-          <SearchIcon className="searchIcon" />
+          <SearchIcon className="searchIcon" onClick={handleNavigate} />
         </div>
       </div>
     </div>

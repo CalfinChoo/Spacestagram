@@ -6,6 +6,8 @@
   height: 70vh;
   transform: translate(-50%, -50%);
   background-color: #000121;
+  border: 2px solid white;
+  border-radius: 5px;
   z-index: 2;
 }
 
@@ -30,6 +32,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgb(83 0 165 / 35%);
+}
+
+.modalLikes {
+  width: 15%;
+}
+
+.modalApodImgContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .modalImgContainer,
@@ -43,6 +58,13 @@
   width: 85%;
   height: 100%;
   object-fit: contain;
+}
+
+.modalApodCloseContainer {
+  margin: 2.5%;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .modalCloseContainer {
@@ -76,10 +98,12 @@
 .modalDescription,
 .modalDate {
   margin-right: 7.5%;
+  margin-left: 7.5%;
 }
 
 .modalTitle {
   font-size: 32px;
+  width: 85%;
 }
 
 .modalDate {

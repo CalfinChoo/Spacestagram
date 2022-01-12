@@ -58,18 +58,21 @@ function Search() {
     updatePage((prev) => prev + 1);
   };
 
-  function openModal(modalData) {
+  const openModal = (modalData) => {
     updateIsOpen(true);
     updateModalInfo({
       data: modalData,
       DataIsLoaded: true,
     });
-  }
+  };
 
-  function closeModal() {
+  const closeModal = () => {
     updateIsOpen(false);
-    updateModalInfo([]);
-  }
+    updateModalInfo({
+      data: {},
+      DataIsLoaded: false,
+    });
+  };
 
   useEffect(() => {
     modalIsOpen && (document.body.style.overflow = "hidden");

@@ -8,6 +8,7 @@ function Post(props) {
     items: [],
     DataIsLoaded: false,
   });
+  const [loaded, updateLoaded] = useState(false);
 
   useEffect(() => {
     updateData({
@@ -17,7 +18,7 @@ function Post(props) {
   }, [props.data]);
 
   return (
-    <div className="post" onClick={() => props.onClick(data.items)}>
+    <div className="post" onClick={() => props.onClick(data.items, false)}>
       {data.DataIsLoaded ? (
         <div className="postInfo">
           <div className="postDetails">
@@ -34,8 +35,12 @@ function Post(props) {
           </div>
           <img
             className="postImg"
+            style={loaded ? {} : { display: "none" }}
             src={data.items.links[0].href}
             key={data.items.links[0].href}
+            onLoad={() => {
+              updateLoaded(true);
+            }}
           />
         </div>
       ) : (

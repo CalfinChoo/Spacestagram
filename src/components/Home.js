@@ -1,8 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { BottomScrollListener } from "react-bottom-scroll-listener";
 import Apod from "./Apod";
 import Posts from "./Posts";
 import ModalComponent from "./ModalComponent";
+import ScrollButton from "./ScrollButton";
 
 import "../css/Home.css";
 
@@ -10,6 +12,7 @@ function Home() {
   const [modalIsOpen, updateIsOpen] = useState(false);
   const [modalInfo, updateModalInfo] = useState({
     data: {},
+    isApod: false,
     DataIsLoaded: false,
   });
   const [apod, updateApod] = useState({
@@ -21,6 +24,15 @@ function Home() {
     metadata: {},
     DataIsLoaded: false,
   });
+  const [page, updatePage] = useState(1);
+
+  const getPostData = async () => {
+    const request = await fetch(
+      `https://images-api.nasa.gov/search?q=space&media_type=image&page=${page}`
+    );
+    const data = await request.json();
+    return data;
+  };
 
   useEffect(() => {
     fetch(
@@ -34,35 +46,49 @@ function Home() {
           DataIsLoaded: true,
         })
       );
-    fetch("https://images-api.nasa.gov/search?q=explosion&media_type=image")
-      .then((res) => res.json())
-      .then((json) => {
-        updatePosts({
-          items: json.collection.items.slice(0, 99),
-          metadata: json.collection.metadata,
-          DataIsLoaded: true,
-        });
-      });
   }, []);
 
-  function openModal(modalData) {
+  useEffect(() => {
+    getPostData().then((data) => {
+      const itemsCopy = [...posts.items];
+      updatePosts({
+        items: itemsCopy.concat(data.collection.items),
+        metadata: data.collection.metadata,
+        DataIsLoaded: true,
+      });
+    });
+  }, [page]);
+
+  const bottomCallback = () => {
+    updatePage((prev) => prev + 1);
+  };
+
+  const openModal = (modalData, isApod) => {
     updateIsOpen(true);
     updateModalInfo({
       data: modalData,
+      isApod: isApod,
       DataIsLoaded: true,
     });
-  }
+  };
 
-  function closeModal() {
+  const closeModal = () => {
     updateIsOpen(false);
-    updateModalInfo([]);
-  }
+    updateModalInfo({
+      data: {},
+      isApod: false,
+      DataIsLoaded: false,
+    });
+  };
 
   useEffect(() => {
     modalIsOpen && (document.body.style.overflow = "hidden");
     !modalIsOpen && (document.body.style.overflow = "unset");
-    console.log(modalInfo);
   }, [modalIsOpen]);
+
+  useEffect(() => {
+    console.log(apod);
+  }, [apod]);
 
   return (
     <>
@@ -71,8 +97,10 @@ function Home() {
         closeModal={closeModal}
         modalInfo={modalInfo}
       />
-      <Apod data={apod} />
-      <Posts posts={posts} openModal={openModal} />
+      <Apod data={apod} onClick={openModal} />
+      {posts.DataIsLoaded && <Posts posts={posts} openModal={openModal} />}
+      <ScrollButton />
+      <BottomScrollListener onBottom={bottomCallback} />;
     </>
   );
 }

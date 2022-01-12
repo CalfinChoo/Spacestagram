@@ -22,12 +22,19 @@ function Apod(props) {
               <div className="media">
                 {data.items.media_type === "video" ? (
                   <iframe
-                    width="60%"
-                    height="300"
+                    width="100%"
+                    height="auto"
                     src={data.items.url}
                   ></iframe>
                 ) : (
-                  <img className="apodImg" src={data.items.url} />
+                  <img
+                    className="apodImg"
+                    src={data.items.url}
+                    onClick={() => {
+                      props.onClick(data.items, true);
+                      console.log(data);
+                    }}
+                  />
                 )}
               </div>
             </div>

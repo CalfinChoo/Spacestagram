@@ -14,6 +14,7 @@
 
 .headerContainer {
   width: 50%;
+  min-width: 500px;
   display: flex;
   align-items: center;
 }
