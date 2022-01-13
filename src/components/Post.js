@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react/cjs/react.development";
 import { motion, Variants } from "framer-motion";
+import ReactLoading from "react-loading";
 import "../css/Post.css";
 
 function Post(props) {
@@ -42,8 +43,12 @@ function Post(props) {
               updateLoaded(true);
             }}
           />
+          {!loaded && (
+            <ReactLoading className="postLoader" type="bubbles" color="white" />
+          )}
         </div>
       ) : (
+        // <ReactLoading type="bubbles" color="white" height="100%" width="50%" />
         <span>Loading...</span>
       )}
     </div>

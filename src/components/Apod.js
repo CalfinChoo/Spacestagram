@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react/cjs/react.development";
+import ReactLoading from "react-loading";
 import "../css/Apod.css";
 
 function Apod(props) {
@@ -45,7 +46,7 @@ function Apod(props) {
             </div>
           </div>
         ) : (
-          <span>Loading...</span>
+          <ReactLoading className="apodLoader" type="bubbles" color="white" />
         )}
       </div>
     </div>

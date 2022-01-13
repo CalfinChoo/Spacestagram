@@ -10,3 +10,12 @@
   color: white;
   transform: scale(3);
 }
+
+.scrollButton:hover {
+  color: rgb(78, 60, 100);
+  transform: scale(3.25);
+}
+
+.scrollButton:hover:active {
+  transform: scale(2.75);
+}

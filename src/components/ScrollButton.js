@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
 
 import "../css/ScrollButton.css";
@@ -15,8 +15,6 @@ function ScrollButton() {
     }
   };
 
-  window.addEventListener("scroll", toggleVisible);
-
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -24,8 +22,12 @@ function ScrollButton() {
     });
   };
 
+  useEffect(() => {
+    window.addEventListener("scroll", toggleVisible);
+  }, []);
+
   return (
-    <button>
+    <button style={{ display: visible ? "inline" : "none" }}>
       <ArrowCircleUpIcon
         className="scrollButton"
         onClick={scrollToTop}

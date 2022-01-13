@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "../css/Header.css";
 import SearchIcon from "@mui/icons-material/Search";
@@ -7,14 +7,21 @@ import SearchIcon from "@mui/icons-material/Search";
 function Header() {
   const [search, updateSearch] = useState("");
   let navigate = useNavigate();
+  let location = useLocation();
+  const handleRootNavigate = () => {
+    if (location.pathname === "/") window.location.reload(false);
+  };
 
-  const handleNavigate = () => {
-    if (/\S/.test(search)) navigate(`/search/${search}`);
+  const handleSearchNavigate = () => {
+    if (/\S/.test(search)) {
+      navigate(`/search/${search}`);
+      window.location.reload(false);
+    }
   };
 
   const handleSubmit = (e) => {
     if (e.code === "Enter") {
-      handleNavigate();
+      handleSearchNavigate();
     }
   };
 
@@ -22,7 +29,7 @@ function Header() {
     <div className="header">
       <div className="headerContainer">
         <div className="logoContainer">
-          <Link to="/" className="logo">
+          <Link to="/" className="logo" onClick={handleRootNavigate}>
             Spacetagram
           </Link>
         </div>
@@ -35,7 +42,7 @@ function Header() {
             onKeyDown={handleSubmit}
             // onSubmit={(event) => navigate(`/search/${event.target}`)}
           />
-          <SearchIcon className="searchIcon" onClick={handleNavigate} />
+          <SearchIcon className="searchIcon" onClick={handleSearchNavigate} />
         </div>
       </div>
     </div>

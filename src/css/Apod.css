@@ -43,8 +43,13 @@
 .apodImg {
   object-fit: cover;
   border: 1px solid black;
+  cursor: pointer;
   /* border-top-left-radius: 5%;
   border-top-right-radius: 5%; */
+}
+
+.apodImg:hover {
+  border: 1px solid rgb(0, 255, 0);
 }
 
 .title {
@@ -71,4 +76,8 @@ h2 {
   width: 85%;
   margin-bottom: 5%;
   font-size: 13px;
+}
+
+.apodLoader {
+  margin: auto;
 }

@@ -24,3 +24,18 @@
   /* row-gap: 5vh; */
   /* gap: 2vw; */
 }
+
+.loader {
+  margin: auto;
+  margin-top: 3vh;
+}
+
+.metadata {
+  display: grid;
+  place-items: center;
+  margin-top: 2vh;
+}
+
+.hits {
+  color: white;
+}
