@@ -4,6 +4,11 @@ A web application built using React and deployed with Heroku that allows users t
 
 [Visit Site](https://nasa-spacestagram.herokuapp.com/ "Spacestagram")
 
+[NASA APIs](https://api.nasa.gov/ "https://api.nasa.gov/") used:
+
+- APOD API
+- NASA Image and Video Library API
+
 ## Development Log
 
 **1/9/22:**
