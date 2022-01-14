@@ -36,7 +36,7 @@ function Header() {
       <div className="headerContainer">
         <div className="logoContainer">
           <Link to="/" className="logo" onClick={handleRootNavigate}>
-            Spacetagram
+            Spacestagram
           </Link>
         </div>
         <div className="inputContainer">
