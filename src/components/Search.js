@@ -27,15 +27,16 @@ function Search() {
   });
   const [page, updatePage] = useState(1);
   const [search, updateSearch] = useState("");
-  const [date, updateDate] = useState(null);
+  const [startDate, updateStartDate] = useState(null);
+  const [endDate, updateEndDate] = useState(new Date());
 
   let { searchId } = useParams();
 
   const getPostData = async () => {
     try {
       const request = await fetch(
-        date
-          ? `https://images-api.nasa.gov/search?q=${searchId}&media_type=image&page=${page}&year_start=${date.getFullYear()}`
+        startDate
+          ? `https://images-api.nasa.gov/search?q=${searchId}&media_type=image&page=${page}&year_start=${startDate.getFullYear()}&year_end=${endDate.getFullYear()}`
           : `https://images-api.nasa.gov/search?q=${searchId}&media_type=image&page=${page}`
       );
       const data = await request.json();
@@ -106,7 +107,7 @@ function Search() {
       });
     });
     // eslint-disable-next-line
-  }, [date]);
+  }, [startDate, endDate]);
 
   const DateInput = forwardRef(
     ({ onChange, placeholder, value, isSecure, id, onClick }, ref) => (
@@ -140,12 +141,20 @@ function Search() {
           <div className="searchInfoContainer">
             <span className="hits">{posts.metadata.total_hits} results</span>
             <div className="dateContainer">
-              <span className="dateText">Date: </span>
               <DatePicker
-                selected={date}
-                onChange={(newDate) => updateDate(newDate)}
+                selected={startDate}
+                onChange={(newDate) => updateStartDate(newDate)}
                 customInput={<DateInput />}
                 placeholderText="Starting Date"
+                showYearPicker
+                dateFormat="yyyy"
+              />{" "}
+              <span className="dateText">-</span>
+              <DatePicker
+                selected={endDate}
+                onChange={(newDate) => updateEndDate(newDate)}
+                customInput={<DateInput />}
+                placeholderText="Ending Date"
                 showYearPicker
                 dateFormat="yyyy"
               />
