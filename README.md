@@ -1,4 +1,4 @@
-# Spacetagram
+# Spacestagram
 
 Visit Site: [https://nasa-spacestagram.herokuapp.com/](https://nasa-spacestagram.herokuapp.com/ "https://nasa-spacestagram.herokuapp.com/")
 
@@ -50,3 +50,4 @@ A web application built using React and deployed with Heroku that allows users t
 
 - Changed like feature to save like on leaving / reload (saved in local storage)
 - Adjusted styling and media query
+- Changed logo font
