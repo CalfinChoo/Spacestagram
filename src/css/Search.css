@@ -70,6 +70,20 @@
   }
 }
 
+@media only screen and (max-width: 770px) {
+  .searchInfoContainer {
+    width: 96%;
+    justify-content: space-between;
+  }
+  .hits,
+  .dateContainer {
+    width: calc(96vw / 3);
+  }
+  .dateInput {
+    width: 12.5vw;
+  }
+}
+
 @media only screen and (max-width: 735px) {
   .hits,
   .dateContainer {
@@ -77,5 +91,17 @@
   }
   .searchInfoContainer {
     width: 96%;
+  }
+  .dateInput {
+    width: 15vw;
+  }
+}
+
+@media (max-height: 300px), only screen and (max-width: 735px) {
+  .searchInfo {
+    margin-bottom: 2vh;
+  }
+  .dateInput {
+    height: 3vh;
   }
 }

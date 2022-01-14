@@ -130,46 +130,51 @@ function Search() {
   }, [modalIsOpen]);
 
   return (
-    <>
-      <ModalComponent
-        modalIsOpen={modalIsOpen}
-        closeModal={closeModal}
-        modalInfo={modalInfo}
-      />
-      {posts.DataIsLoaded && (
-        <div className="searchInfo">
-          <div className="searchInfoContainer">
-            <span className="hits">{posts.metadata.total_hits} results</span>
-            <div className="dateContainer">
-              <DatePicker
-                selected={startDate}
-                onChange={(newDate) => updateStartDate(newDate)}
-                customInput={<DateInput />}
-                placeholderText="Starting Date"
-                showYearPicker
-                dateFormat="yyyy"
-              />{" "}
-              <span className="dateText">-</span>
-              <DatePicker
-                selected={endDate}
-                onChange={(newDate) => updateEndDate(newDate)}
-                customInput={<DateInput />}
-                placeholderText="Ending Date"
-                showYearPicker
-                dateFormat="yyyy"
-              />
+    <BottomScrollListener onBottom={bottomCallback}>
+      {(scrollRef) => (
+        <div className="body" ref={scrollRef}>
+          <ModalComponent
+            modalIsOpen={modalIsOpen}
+            closeModal={closeModal}
+            modalInfo={modalInfo}
+          />
+          {posts.DataIsLoaded && (
+            <div className="searchInfo">
+              <div className="searchInfoContainer">
+                <span className="hits">
+                  {posts.metadata.total_hits} results
+                </span>
+                <div className="dateContainer">
+                  <DatePicker
+                    selected={startDate}
+                    onChange={(newDate) => updateStartDate(newDate)}
+                    customInput={<DateInput />}
+                    placeholderText="Starting Date"
+                    showYearPicker
+                    dateFormat="yyyy"
+                  />{" "}
+                  <span className="dateText">-</span>
+                  <DatePicker
+                    selected={endDate}
+                    onChange={(newDate) => updateEndDate(newDate)}
+                    customInput={<DateInput />}
+                    placeholderText="Ending Date"
+                    showYearPicker
+                    dateFormat="yyyy"
+                  />
+                </div>
+              </div>
             </div>
-          </div>
+          )}
+          {posts.DataIsLoaded ? (
+            <Posts posts={posts} openModal={openModal} />
+          ) : (
+            <ReactLoading className="loader" type="bubbles" color="white" />
+          )}
+          <ScrollButton />
         </div>
       )}
-      {posts.DataIsLoaded ? (
-        <Posts posts={posts} openModal={openModal} />
-      ) : (
-        <ReactLoading className="loader" type="bubbles" color="white" />
-      )}
-      <ScrollButton />
-      <BottomScrollListener onBottom={bottomCallback} />;
-    </>
+    </BottomScrollListener>
   );
 }
 

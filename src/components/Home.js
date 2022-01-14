@@ -46,7 +46,6 @@ function Home() {
           process.env.REACT_APP_NASA_API_KEY
       );
       const data = await request.json();
-      console.log(data);
       return data;
     } catch (err) {
       return null;
@@ -62,7 +61,6 @@ function Home() {
         }&media_type=image&page=${page}`
       );
       const data = await request.json();
-      console.log(data);
       return data;
     } catch (err) {
       return null;
@@ -125,21 +123,24 @@ function Home() {
   }, [modalIsOpen]);
 
   return (
-    <>
-      <ModalComponent
-        modalIsOpen={modalIsOpen}
-        closeModal={closeModal}
-        modalInfo={modalInfo}
-      />
-      <Apod data={apod} onClick={openModal} />
-      {posts.DataIsLoaded && posts.items.length > 0 ? (
-        <Posts posts={posts} openModal={openModal} />
-      ) : (
-        <ReactLoading className="loader" type="bubbles" color="white" />
+    <BottomScrollListener onBottom={bottomCallback}>
+      {(scrollRef) => (
+        <div className="body" ref={scrollRef}>
+          <ModalComponent
+            modalIsOpen={modalIsOpen}
+            closeModal={closeModal}
+            modalInfo={modalInfo}
+          />
+          <Apod data={apod} onClick={openModal} />
+          {posts.DataIsLoaded && posts.items.length > 0 ? (
+            <Posts posts={posts} openModal={openModal} />
+          ) : (
+            <ReactLoading className="loader" type="bubbles" color="white" />
+          )}
+          <ScrollButton />
+        </div>
       )}
-      <ScrollButton />
-      <BottomScrollListener onBottom={bottomCallback} />;
-    </>
+    </BottomScrollListener>
   );
 }
 

@@ -22,13 +22,47 @@
   margin-top: 3vh;
 }
 
+.body {
+  height: 93.5vh;
+  overflow-y: scroll;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #412385 #380576;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #380576;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #412385;
+  border-radius: 10px;
+  border: 1px solid #000000;
+}
+
 @media only screen and (max-width: 1300px) {
   .postsContainer {
     width: 80%;
   }
 }
-@media only screen and (max-width: 735px) {
+@media (max-height: 300px), only screen and (max-width: 735px) {
   .postsContainer {
-    width: 95%;
+    width: 100%;
+  }
+  .posts {
+    margin: 0;
+    padding: 0;
+  }
+  *::-webkit-scrollbar {
+    width: 0;
   }
 }

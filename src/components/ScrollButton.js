@@ -7,7 +7,7 @@ function ScrollButton() {
   const [visible, setVisible] = useState(false);
 
   const toggleVisible = () => {
-    const scrolled = document.documentElement.scrollTop;
+    const scrolled = document.querySelector(".body").scrollTop;
     if (scrolled > 300) {
       setVisible(true);
     } else if (scrolled <= 300) {
@@ -16,24 +16,22 @@ function ScrollButton() {
   };
 
   const scrollToTop = () => {
-    window.scrollTo({
+    document.querySelector(".body").scrollTo({
       top: 0,
       behavior: "smooth",
     });
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", toggleVisible);
+    document.querySelector(".body").addEventListener("scroll", toggleVisible);
   }, []);
 
   return (
-    <button style={{ display: visible ? "inline" : "none" }}>
-      <ArrowCircleUpIcon
-        className="scrollButton"
-        onClick={scrollToTop}
-        style={{ display: visible ? "inline" : "none" }}
-      />
-    </button>
+    <ArrowCircleUpIcon
+      className="scrollButton"
+      onClick={scrollToTop}
+      style={{ display: visible ? "inline" : "none" }}
+    />
   );
 }
 
