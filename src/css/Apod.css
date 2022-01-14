@@ -26,8 +26,8 @@
 }
 
 .media {
-  width: calc(52.5vw / 3);
-  height: calc(52.5vw / 3);
+  width: calc(54.5vw / 3);
+  height: calc(54.5vw / 3);
   display: flex;
   justify-content: center;
   overflow: hidden;
@@ -42,7 +42,6 @@
 
 .apodImg {
   object-fit: cover;
-  border: 1px solid black;
   cursor: pointer;
   /* border-top-left-radius: 5%;
   border-top-right-radius: 5%; */

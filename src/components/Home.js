@@ -46,6 +46,7 @@ function Home() {
           process.env.REACT_APP_NASA_API_KEY
       );
       const data = await request.json();
+      console.log(data);
       return data;
     } catch (err) {
       return null;
@@ -61,6 +62,7 @@ function Home() {
         }&media_type=image&page=${page}`
       );
       const data = await request.json();
+      console.log(data);
       return data;
     } catch (err) {
       return null;

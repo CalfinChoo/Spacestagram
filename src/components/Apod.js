@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react/cjs/react.development";
 import ReactLoading from "react-loading";
 import Heart from "react-heart";
+import { reactLocalStorage } from "reactjs-localstorage";
 
 import "../css/Apod.css";
 
@@ -12,8 +13,31 @@ function Apod(props) {
   });
   const [liked, updateLiked] = useState(false);
 
+  const handleUpdateLiked = (isLiked) => {
+    let ls = [...JSON.parse(reactLocalStorage.get("liked", "[]"))];
+    isLiked
+      ? reactLocalStorage.set(
+          "liked",
+          JSON.stringify(
+            ls.filter((val) => {
+              return val !== data.items.date;
+            })
+          )
+        )
+      : reactLocalStorage.set(
+          "liked",
+          JSON.stringify(ls.concat([data.items.date]))
+        );
+    updateLiked((prev) => !prev);
+  };
+
   useEffect(() => {
     updateData(props.data);
+    updateLiked(
+      JSON.parse(reactLocalStorage.get("liked", "[]")).includes(
+        props.data.items.date
+      )
+    );
   }, [props.data]);
 
   return (
@@ -49,7 +73,7 @@ function Apod(props) {
                   <Heart
                     className="heart"
                     isActive={liked}
-                    onClick={() => updateLiked((prev) => !prev)}
+                    onClick={() => handleUpdateLiked(liked)}
                     inactiveColor="white"
                     animationTrigger="both"
                     animationScale={1.2}

@@ -10,7 +10,7 @@ function ModalComponent({ modalIsOpen, closeModal, modalInfo }) {
   const [modalLiked, updateModalLiked] = useState(false);
 
   const handleUpdateLiked = () => {
-    modalInfo.updateLiked((prev) => !prev);
+    modalInfo.updateLiked(modalLiked);
     updateModalLiked((prev) => !prev);
   };
 
