@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
+
 .header {
   background-image: linear-gradient(to right, #151b8c, #8a58ff);
   height: 6.5vh;
@@ -20,7 +22,6 @@
 
 .logoContainer,
 .inputContainer {
-  width: calc(100% / 4);
   position: relative;
 }
 
@@ -44,7 +45,7 @@
 
 .logo {
   margin: 0;
-  font-family: "Brush Script MT", cursive;
+  font-family: "Yellowtail", cursive;
   font-size: 3.5vh;
   color: white;
   text-shadow: 0 0 2px #000;
@@ -71,20 +72,44 @@
   }
 }
 
+@media only screen and (max-width: 410px) {
+  .headerContainer {
+    flex-direction: column;
+  }
+  .header {
+    height: auto;
+  }
+  .searchInput {
+    margin-bottom: 5px;
+  }
+}
+
 @media only screen and (max-height: 735px) {
   .header {
-    height: 13vh;
+    height: auto;
   }
   .searchInput {
     height: 5vh;
   }
   .logo {
-    font-size: 7vh;
+    font-size: 6vh;
   }
 }
 
-@media only screen and (max-width: 335px) {
+@media only screen and (max-height: 450px) {
+  .header {
+    min-height: 50px;
+  }
   .logo {
-    font-size: 10vw;
+    font-size: 30px;
+  }
+  .searchInput {
+    height: 30px;
+  }
+}
+
+@media only screen and (max-width: 210px) {
+  .logo {
+    font-size: 15vw;
   }
 }

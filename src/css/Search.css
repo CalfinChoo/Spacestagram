@@ -105,3 +105,29 @@
     height: 3vh;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .dateInput {
+    width: 90px;
+  }
+}
+
+@media only screen and (max-width: 334px) {
+  .searchInfoContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .dateContainer {
+    width: 100%;
+    justify-content: center;
+  }
+  .hits {
+    margin-bottom: 5px;
+  }
+}
+
+@media only screen and (max-height: 450px) {
+  .dateInput {
+    height: 16px;
+  }
+}
