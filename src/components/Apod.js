@@ -14,7 +14,6 @@ function Apod(props) {
 
   useEffect(() => {
     updateData(props.data);
-    console.log(props.data);
   }, [props.data]);
 
   return (
@@ -38,6 +37,7 @@ function Apod(props) {
                     onClick={() => {
                       props.onClick(data.items, liked, updateLiked, true);
                     }}
+                    alt="Error Displaying"
                   />
                 )}
               </div>

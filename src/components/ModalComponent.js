@@ -34,7 +34,11 @@ function ModalComponent({ modalIsOpen, closeModal, modalInfo }) {
             <div className="modalContainer">
               {modalInfo.isApod ? (
                 <div className="modalApodImgContainer">
-                  <img className="modalImg" src={modalInfo.data.url} />
+                  <img
+                    className="modalImg"
+                    src={modalInfo.data.url}
+                    alt="Error Displaying"
+                  />
                   <div className="modalApodCloseContainer">
                     <CloseIcon className="close" onClick={closeModal} />
                   </div>
@@ -44,6 +48,7 @@ function ModalComponent({ modalIsOpen, closeModal, modalInfo }) {
                   <img
                     className="modalImg"
                     src={modalInfo.data.links[0].href}
+                    alt="Error Displaying"
                   />
                 </div>
               )}

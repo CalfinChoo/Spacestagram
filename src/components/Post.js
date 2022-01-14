@@ -65,6 +65,7 @@ function Post(props) {
             onLoad={() => {
               updateLoaded(true);
             }}
+            alt="Error Displaying"
           />
           {!loaded && (
             <ReactLoading className="postLoader" type="bubbles" color="white" />
