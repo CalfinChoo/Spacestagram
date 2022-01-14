@@ -1,8 +1,8 @@
 # Spacetagram
 
-A web application built using React and deployed with Heroku that allows users to view NASA's Astronomy Picture of the Day and photos from NASA's Image and Video Library. Users can search for photos and query them by a range of dates, as well as like and unlike photos (likes persist in localStorage).
-
 [Visit Site](https://nasa-spacestagram.herokuapp.com/ "Spacestagram")
+
+A web application built using React and deployed with Heroku that allows users to view NASA's Astronomy Picture of the Day and photos from NASA's Image and Video Library. Users can search for photos and query them by a range of dates, as well as like and unlike photos (likes persist in localStorage).
 
 [NASA APIs](https://api.nasa.gov/ "https://api.nasa.gov/") used:
 
