@@ -43,11 +43,13 @@
 .postMore {
   color: white;
   margin: 7.5%;
+  user-select: none;
 }
 
 .postTitle {
   font-size: 125%;
   font-weight: bold;
+  overflow-wrap: break-word;
 }
 
 .postMore {
@@ -57,6 +59,8 @@
 
 .postDate {
   font-size: 90%;
+  display: grid;
+  place-items: center;
 }
 
 .postImg {
@@ -73,4 +77,29 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.postLikes {
+  width: 2rem;
+  height: 2rem;
+}
+
+.heart {
+  width: 2rem;
+  color: gray;
+}
+
+@media only screen and (max-width: 1300px) {
+  .postInfo {
+    height: calc(80vw / 3);
+  }
+}
+
+@media only screen and (max-width: 735px) {
+  .postInfo {
+    height: calc(95vw / 3);
+  }
+  .postInfo:hover .postDetails {
+    display: none;
+  }
 }

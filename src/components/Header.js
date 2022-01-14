@@ -12,6 +12,12 @@ function Header() {
     if (location.pathname === "/") window.location.reload(false);
   };
 
+  useEffect(() => {
+    location.pathname.includes("/search/")
+      ? updateSearch(decodeURI(location.pathname.slice(8)))
+      : updateSearch("");
+  }, [location.pathname]);
+
   const handleSearchNavigate = () => {
     if (/\S/.test(search)) {
       navigate(`/search/${search}`);

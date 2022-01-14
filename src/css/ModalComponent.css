@@ -32,11 +32,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(83 0 165 / 35%);
+  background-color: rgb(32 4 60 / 35%);
 }
 
 .modalLikes {
   width: 15%;
+  display: grid;
+  place-items: center;
 }
 
 .modalApodImgContainer {
@@ -92,6 +94,7 @@
 
 .modalBody {
   margin-bottom: 7.5%;
+  overflow-wrap: break-word;
 }
 
 .modalHeader,
@@ -104,8 +107,32 @@
 .modalTitle {
   font-size: 32px;
   width: 85%;
+  overflow-wrap: break-word;
 }
 
 .modalDate {
   font-style: italic;
+}
+
+@media only screen and (max-width: 735px) {
+  .modalContainer {
+    flex-direction: column;
+  }
+  .modalImgContainer,
+  .modalInfo {
+    width: 100%;
+  }
+  .modalCloseContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .modalInfo {
+    margin-top: 3vh;
+  }
+  .modalLikes {
+    position: absolute;
+    top: 40%;
+    right: 0;
+  }
 }

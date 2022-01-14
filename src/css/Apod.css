@@ -1,17 +1,16 @@
 .apodArea {
   display: flex;
   justify-content: center;
-  margin: 2%;
+  margin: 2% 0 2% 0;
 }
 
 .apod {
-  min-width: 700px;
-  max-width: 55%;
+  width: 55%;
   /* height: calc(52.5vw / 3); */
   background-image: linear-gradient(to right, #8a58ff, #151b8c);
   /* border-radius: 10px; */
-  margin-left: 3%;
-  margin-right: 3%;
+  /* margin-left: 3%;
+  margin-right: 3%; */
   box-shadow: 0 1px 8px 4px rgba(223, 192, 247, 0.61);
   border: 2px solid #e5e5e5;
   color: white;
@@ -32,6 +31,7 @@
   display: flex;
   justify-content: center;
   overflow: hidden;
+  border: 1px solid black;
 }
 
 .apodMediaContainer {
@@ -48,7 +48,7 @@
   border-top-right-radius: 5%; */
 }
 
-.apodImg:hover {
+.media:hover {
   border: 1px solid rgb(0, 255, 0);
 }
 
@@ -67,17 +67,62 @@ h2 {
 }
 
 .title,
-.explanation {
+.explanation,
+.date {
   margin-left: 7.5%;
   margin-right: 7.5%;
 }
 
-.explanation {
+.explanation,
+.date {
   width: 85%;
-  margin-bottom: 5%;
   font-size: 13px;
+}
+
+.explanation {
+  margin-bottom: 5%;
+}
+
+.date {
+  font-style: italic;
 }
 
 .apodLoader {
   margin: auto;
+}
+
+.apodHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.apodHeartContainer {
+  display: grid;
+  place-items: end;
+  margin-right: 7.5%;
+}
+
+@media only screen and (max-width: 1300px) {
+  .apod {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .apodContainer {
+    flex-direction: column;
+  }
+  .media {
+    width: calc(95vw / 3);
+    height: calc(95vw / 3);
+  }
+}
+
+@media only screen and (max-width: 735px) {
+  .apod {
+    width: 95%;
+  }
+  h1 {
+    margin-top: 1vw;
+  }
 }

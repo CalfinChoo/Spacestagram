@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import parse from "html-react-parser";
 import CloseIcon from "@mui/icons-material/Close";
+import Heart from "react-heart";
 
 import "../css/ModalComponent.css";
 
 function ModalComponent({ modalIsOpen, closeModal, modalInfo }) {
+  const [modalLiked, updateModalLiked] = useState(false);
+
+  const handleUpdateLiked = () => {
+    modalInfo.updateLiked((prev) => !prev);
+    updateModalLiked((prev) => !prev);
+  };
+
+  useEffect(() => {
+    updateModalLiked(modalInfo.liked);
+  }, [modalInfo]);
+
   return (
     <>
       <Modal
@@ -50,7 +62,19 @@ function ModalComponent({ modalIsOpen, closeModal, modalInfo }) {
                     <h1 className="modalTitle">
                       {modalInfo.data.data[0].title}
                     </h1>
-                    <div className="modalLikes">Likes</div>
+                    <div className="modalLikes">
+                      <div className="heartContainer" title="Like">
+                        <Heart
+                          className="heart"
+                          isActive={modalLiked}
+                          onClick={handleUpdateLiked}
+                          inactiveColor="white"
+                          animationTrigger="both"
+                          animationScale={1.2}
+                          animationDuration={0.25}
+                        />
+                      </div>
+                    </div>
                   </div>
                   <div className="modalBody">
                     <div className="modalDescription">

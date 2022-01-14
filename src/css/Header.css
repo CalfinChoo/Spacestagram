@@ -13,15 +13,15 @@
 }
 
 .headerContainer {
-  width: 50%;
-  min-width: 500px;
+  width: 55%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .logoContainer,
 .inputContainer {
-  width: calc(100% / 3);
+  width: calc(100% / 4);
   position: relative;
 }
 
@@ -52,4 +52,22 @@
   text-shadow: -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000, 0.5px -0.5px 0 #000,
     -1px -1px 0 #000;
   text-decoration: none;
+}
+
+@media only screen and (max-width: 1300px) {
+  .headerContainer {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 735px) {
+  .headerContainer {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .inputContainer {
+    width: calc(100% / 2);
+  }
 }

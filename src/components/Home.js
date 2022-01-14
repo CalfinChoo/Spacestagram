@@ -13,6 +13,8 @@ function Home() {
   const [modalIsOpen, updateIsOpen] = useState(false);
   const [modalInfo, updateModalInfo] = useState({
     data: {},
+    liked: false,
+    updateLiked: null,
     isApod: false,
     DataIsLoaded: false,
   });
@@ -26,6 +28,16 @@ function Home() {
     DataIsLoaded: false,
   });
   const [page, updatePage] = useState(1);
+
+  const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array;
+  };
 
   const getApodData = async () => {
     try {
@@ -41,9 +53,12 @@ function Home() {
   };
 
   const getPostData = async () => {
+    const initSearch = ["cosmic", "galactic", "supernova", "black%20hole"];
     try {
       const request = await fetch(
-        `https://images-api.nasa.gov/search?q=space&media_type=image&page=${page}`
+        `https://images-api.nasa.gov/search?q=${
+          shuffleArray(initSearch)[0]
+        }&media_type=image&page=${page}`
       );
       const data = await request.json();
       return data;
@@ -56,10 +71,12 @@ function Home() {
     updatePage((prev) => prev + 1);
   };
 
-  const openModal = (modalData, isApod) => {
+  const openModal = (modalData, liked, updateLiked, isApod) => {
     updateIsOpen(true);
     updateModalInfo({
       data: modalData,
+      liked: liked,
+      updateLiked: updateLiked,
       isApod: isApod,
       DataIsLoaded: true,
     });
@@ -69,6 +86,8 @@ function Home() {
     updateIsOpen(false);
     updateModalInfo({
       data: {},
+      liked: false,
+      updateLiked: null,
       isApod: false,
       DataIsLoaded: false,
     });
@@ -88,11 +107,14 @@ function Home() {
       const itemsCopy = [...posts.items];
       const metadataCopy = { ...posts.metadata };
       updatePosts({
-        items: itemsCopy.concat(data === null ? [] : data.collection.items),
+        items: itemsCopy.concat(
+          data === null ? [] : shuffleArray(data.collection.items)
+        ),
         metadata: data === null ? metadataCopy : data.collection.metadata,
         DataIsLoaded: true,
       });
     });
+    // eslint-disable-next-line
   }, [page]);
 
   useEffect(() => {
@@ -108,7 +130,7 @@ function Home() {
         modalInfo={modalInfo}
       />
       <Apod data={apod} onClick={openModal} />
-      {posts.DataIsLoaded ? (
+      {posts.DataIsLoaded && posts.items.length > 0 ? (
         <Posts posts={posts} openModal={openModal} />
       ) : (
         <ReactLoading className="loader" type="bubbles" color="white" />

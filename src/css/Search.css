@@ -1,0 +1,80 @@
+.searchInfo {
+  margin-top: 2vh;
+  display: grid;
+  place-items: center;
+}
+
+.searchInfoContainer {
+  width: 56%;
+}
+
+.searchInfoContainer,
+.dateContainer {
+  display: flex;
+  justify-content: end;
+}
+
+.hits,
+.dateText {
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dateText {
+  margin-right: 0.5vw;
+}
+
+.hits,
+.dateContainer {
+  width: calc(55vw / 3);
+  text-align: center;
+}
+
+.react-datepicker-wrapper {
+  width: auto;
+}
+
+.react-datepicker-popper {
+  z-index: 99;
+}
+
+.dateInput {
+  width: 5vw;
+  height: 2.75vh;
+  border-radius: 10px;
+  border: white solid 1px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1300px) {
+  .hits,
+  .dateContainer {
+    width: calc(80vw / 3);
+  }
+  .searchInfoContainer {
+    width: 81%;
+  }
+  .dateInput {
+    width: 7.5vw;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .dateInput {
+    width: 10vw;
+  }
+}
+
+@media only screen and (max-width: 735px) {
+  .hits,
+  .dateContainer {
+    width: calc(95vw / 3);
+  }
+  .searchInfoContainer {
+    width: 96%;
+  }
+}
