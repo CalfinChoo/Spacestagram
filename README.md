@@ -1,6 +1,6 @@
 # Spacetagram
 
-[Visit Site](https://nasa-spacestagram.herokuapp.com/ "Spacestagram")
+Visit Site: [https://nasa-spacestagram.herokuapp.com/](https://nasa-spacestagram.herokuapp.com/ "https://nasa-spacestagram.herokuapp.com/")
 
 A web application built using React and deployed with Heroku that allows users to view NASA's Astronomy Picture of the Day and photos from NASA's Image and Video Library. Users can search for photos and query them by a range of dates, as well as like and unlike photos (likes persist in localStorage).
 
@@ -49,3 +49,4 @@ A web application built using React and deployed with Heroku that allows users t
 **1/14/22:**
 
 - Changed like feature to save like on leaving / reload (saved in local storage)
+- Adjusted styling and media query
