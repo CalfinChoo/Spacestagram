@@ -10,7 +10,7 @@ import ScrollButton from "./ScrollButton";
 import "../css/Home.css";
 
 function Home() {
-  const [modalIsOpen, updateIsOpen] = useState(false);
+  const [modalIsOpen, updateModalIsOpen] = useState(false);
   const [modalInfo, updateModalInfo] = useState({
     data: {},
     liked: false,
@@ -72,7 +72,7 @@ function Home() {
   };
 
   const openModal = (modalData, liked, updateLiked, isApod) => {
-    updateIsOpen(true);
+    updateModalIsOpen(true);
     updateModalInfo({
       data: modalData,
       liked: liked,
@@ -83,7 +83,7 @@ function Home() {
   };
 
   const closeModal = () => {
-    updateIsOpen(false);
+    updateModalIsOpen(false);
     updateModalInfo({
       data: {},
       liked: false,
