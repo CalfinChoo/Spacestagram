@@ -8,7 +8,7 @@
   background-color: #000121;
   border: 2px solid white;
   border-radius: 5px;
-  z-index: 2;
+  z-index: 10000;
 }
 
 .Overlay {
@@ -18,7 +18,7 @@
   right: 0;
   bottom: 0;
   background-color: rgba(62, 33, 128, 0.5);
-  z-index: 2;
+  z-index: 10000;
 }
 
 .modalContainer {
@@ -132,8 +132,8 @@
   }
   .modalLikes {
     position: absolute;
-    top: 40%;
-    right: 0;
+    top: 35%;
+    right: 2.25%;
   }
   .Modal {
     height: 82.5vh;
