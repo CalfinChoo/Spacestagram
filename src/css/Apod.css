@@ -6,11 +6,7 @@
 
 .apod {
   width: 55%;
-  /* height: calc(52.5vw / 3); */
   background-image: linear-gradient(to right, #8a58ff, #151b8c);
-  /* border-radius: 10px; */
-  /* margin-left: 3%;
-  margin-right: 3%; */
   box-shadow: 0 1px 8px 4px rgba(223, 192, 247, 0.61);
   border: 2px solid #e5e5e5;
   color: white;
@@ -43,8 +39,6 @@
 .apodImg {
   object-fit: cover;
   cursor: pointer;
-  /* border-top-left-radius: 5%;
-  border-top-right-radius: 5%; */
 }
 
 .media:hover {
@@ -52,7 +46,6 @@
 }
 
 .title {
-  /* background-image: linear-gradient(to right, #585dff, #15418c); */
   text-align: left;
   margin-bottom: 0.5vh;
 }
