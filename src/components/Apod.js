@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { useEffect } from "react/cjs/react.development";
+import React, { useState, useEffect } from "react";
 import ReactLoading from "react-loading";
 import Heart from "react-heart";
 import { reactLocalStorage } from "reactjs-localstorage";
