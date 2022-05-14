@@ -2,7 +2,7 @@
 
 Visit Site: [https://inspiring-volhard-4b4ee7.netlify.app/](https://inspiring-volhard-4b4ee7.netlify.app/ "https://inspiring-volhard-4b4ee7.netlify.app/")
 
-A web application built using React and deployed with Heroku that allows users to view NASA's Astronomy Picture of the Day and photos from NASA's Image and Video Library. Users can search for photos and query them by a range of dates, as well as like and unlike photos (likes persist in localStorage).
+A web application built using React that allows users to view NASA's Astronomy Picture of the Day and photos from NASA's Image and Video Library. Users can search for photos and query them by a range of dates, as well as like and unlike photos (likes persist in localStorage).
 
 [NASA APIs](https://api.nasa.gov/ "https://api.nasa.gov/") used:
 
