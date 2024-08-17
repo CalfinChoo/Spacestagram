@@ -100,6 +100,7 @@ function Home() {
         DataIsLoaded: data === null ? false : true,
       })
     );
+    console.log(apod);
   }, []);
 
   useEffect(() => {

@@ -37,6 +37,7 @@ function Apod(props) {
         props.data.items.date
       )
     );
+    console.log(data);
   }, [props.data]);
 
   return (
@@ -48,8 +49,8 @@ function Apod(props) {
               <div className="media">
                 {data.items.media_type === "video" ? (
                   <iframe
-                    width="100%"
-                    height="auto"
+                    // width="100%"
+                    // height="auto"
                     src={data.items.url}
                     title={data.items.url}
                   ></iframe>

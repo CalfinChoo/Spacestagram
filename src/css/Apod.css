@@ -19,21 +19,25 @@
 .apodInfo {
   display: flex;
   flex-direction: column;
+  flex: 2 1 0;
 }
 
 .media {
-  width: calc(54.5vw / 3);
-  height: calc(54.5vw / 3);
+  width: calc(55vw / 3);
+  height: calc(55vw / 3);
   display: flex;
   justify-content: center;
   overflow: hidden;
   border: 1px solid black;
 }
 
+.media iframe {
+  width: 100%;
+  height: 100%;
+}
+
 .apodMediaContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  flex: 1 1 0;
 }
 
 .apodImg {
@@ -98,11 +102,19 @@ h2 {
   .apod {
     width: 80%;
   }
+  .media {
+    width: calc(80vw / 3);
+    height: calc(80vw / 3);
+  }
 }
 
 @media only screen and (max-width: 1000px) {
   .apodContainer {
     flex-direction: column;
+  }
+  .apodMediaContainer {
+    display: flex;
+    justify-content: center;
   }
   .media {
     width: calc(95vw / 3);
