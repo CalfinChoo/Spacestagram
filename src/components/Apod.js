@@ -37,7 +37,6 @@ function Apod(props) {
         props.data.items.date
       )
     );
-    console.log(data);
   }, [props.data]);
 
   return (
