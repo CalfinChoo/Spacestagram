@@ -28,15 +28,9 @@
 }
 
 /* ===== Scrollbar CSS ===== */
-/* Firefox */
-* {
-  scrollbar-width: auto;
-  scrollbar-color: #412385 #380576;
-}
-
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-  width: 16px;
+  width: 12px;
 }
 
 *::-webkit-scrollbar-track {

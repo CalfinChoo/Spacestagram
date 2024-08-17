@@ -20,6 +20,7 @@
   display: flex;
   flex-direction: column;
   flex: 2 1 0;
+  height: calc(55vw / 3);
 }
 
 .media {
@@ -43,6 +44,8 @@
 .apodImg {
   object-fit: cover;
   cursor: pointer;
+  height: 100%;
+  width: 100%;
 }
 
 .media:hover {
@@ -71,16 +74,25 @@ h2 {
 
 .explanation,
 .date {
-  width: 85%;
   font-size: 13px;
 }
 
 .explanation {
   margin-bottom: 5%;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 2% 2.5% 2% 2.5%;
+}
+
+.explanation::-webkit-scrollbar {
+  display: none;
 }
 
 .date {
   font-style: italic;
+  width: 85%;
 }
 
 .apodLoader {
@@ -106,6 +118,9 @@ h2 {
     width: calc(80vw / 3);
     height: calc(80vw / 3);
   }
+  .apodInfo {
+    height: calc(80vw / 3);
+  }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -118,6 +133,9 @@ h2 {
   }
   .media {
     width: calc(95vw / 3);
+    height: calc(95vw / 3);
+  }
+  .apodInfo {
     height: calc(95vw / 3);
   }
 }
